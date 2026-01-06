@@ -4,7 +4,7 @@
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)](https://www.tensorflow.org/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-A U-Net convolutional neural network implementation for pneumothorax segmentation in chest X-ray images.
+A U-Net convolutional neural network implementation for pneumothorax segmentation in chest X-ray images in JPEG format.
 
 ## Table of Contents
 - [Overview](#overview)
@@ -24,9 +24,9 @@ This project implements a U-Net architecture for semantic segmentation of pneumo
 
 **Key Features:**
 - U-Net architecture with customizable depth
-- Data augmentation pipeline
+- JPEG image processing pipeline
+- Data augmentation for medical images
 - Dice coefficient and IoU evaluation metrics
-- Pretrained model support (optional)
 - Visualization tools for predictions
 
 ## Dataset
@@ -34,8 +34,10 @@ This project implements a U-Net architecture for semantic segmentation of pneumo
 The model uses the **Pneumothorax Chest X-Ray Images and Masks** dataset from Kaggle:
 
 - **Source:** [Kaggle Dataset](https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks)
-- **Contents:** Chest X-Ray images with corresponding pneumothorax masks
-- **Images:** DICOM format with binary masks
+- **Format:** JPEG images (X-rays) and PNG masks
+- **Structure:** 
+  - Images: JPEG format, grayscale/color
+  - Masks: PNG format, binary segmentation masks
 - **Purpose:** Medical image segmentation for pneumothorax detection
 
 ### Dataset Structure
