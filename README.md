@@ -1,43 +1,31 @@
 # U-Net Neural Network for Pneumothorax Segmentation
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)
-[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)](https://www.tensorflow.org/)
-[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+Este proyecto implementa una red neuronal U-Net para la segmentación de neumotórax en imágenes de rayos X de tórax. Desarrollado como parte de mi exploración en redes convolucionales para aplicaciones médicas.
 
-A U-Net convolutional neural network implementation for pneumothorax segmentation in chest X-ray images in JPEG format.
+## Objetivo
 
-## Table of Contents
-- [Overview](#overview)
-- [Dataset](#dataset)
-- [Architecture](#architecture)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Training](#training)
-- [Evaluation Metrics](#evaluation-metrics)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Overview
-
-This project implements a U-Net architecture for semantic segmentation of pneumothorax (collapsed lung) in chest X-ray images. The model identifies and segments pneumothorax regions using convolutional neural networks.
-
-**Key Features:**
-- U-Net architecture with customizable depth
-- JPEG image processing pipeline
-- Data augmentation for medical images
-- Dice coefficient and IoU evaluation metrics
-- Visualization tools for predictions
+Crear un modelo de segmentación semántica capaz de identificar regiones de neumotórax en imágenes JPEG de rayos X, utilizando la arquitectura U-Net clásica.
 
 ## Dataset
 
-The model uses the **Pneumothorax Chest X-Ray Images and Masks** dataset from Kaggle:
+Utilicé el dataset **"Pneumothorax Chest X-Ray Images and Masks"** de Kaggle, que contiene imágenes en formato JPEG con sus respectivas máscaras binarias en PNG.
 
-- **Source:** [Kaggle Dataset](https://www.kaggle.com/datasets/vbookshelf/pneumothorax-chest-xray-images-and-masks)
-- **Format:** JPEG images (X-rays) and PNG masks
-- **Structure:** 
-  - Images: JPEG format, grayscale/color
-  - Masks: PNG format, binary segmentation masks
-- **Purpose:** Medical image segmentation for pneumothorax detection
+## Implementación
 
-### Dataset Structure
+La arquitectura fue construida usando TensorFlow/Keras, con las siguientes características:
+- Capas de convolución y max-pooling en el encoder
+- Skip connections para preservar información espacial
+- Métricas de evaluación: Coeficiente Dice e IoU (Intersection over Union)
+- Preprocesamiento específico para imágenes JPEG médicas
+
+## Resultados
+
+El modelo logra segmentar eficientemente las regiones de neumotórax, con métricas que demuestran su capacidad para aplicaciones de asistencia al diagnóstico médico.
+
+## Uso
+
+Para ejecutar el proyecto:
+```bash
+code SegundaUNet.py
+##Modificar el numero de epocas ( epochs = 50) 
+python3 SegundaUNet.py
